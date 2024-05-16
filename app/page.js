@@ -1,39 +1,15 @@
 "use client";
 import Image from "next/image";
-import { createClient } from "@supabase/supabase-js";
+
 import { useEffect, useState } from "react";
 
-const supabase = createClient(
-  env.NEXT_PUBLIC_SUPABASE_URL,
-env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-);
+
 
 export default function Home() {
-  const [countries, setCountries] = useState([]);
-  useEffect(() => {
-    async function fetchCountries() {
-      const { data, error } = await supabase.from("test").select("*");
 
-      if (error) {
-        console.error(error);
-        return;
-      }
-
-      setCountries(data);
-    }
-
-    fetchCountries();
-  }, []);
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div>
-        <h1>Countries</h1>
-        <ul>
-          {test.map((country) => (
-            <li key={country.id}>{country.name1}</li>
-          ))}
-        </ul>
-      </div>
+      
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
           Gt started by editing&nbsp;
