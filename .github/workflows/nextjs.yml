@@ -11,8 +11,8 @@ permissions:
   id-token: write
 
 env:
-  SUPABASE_URL: your-supabase-url
-  SUPABASE_ANON_KEY: your-supabase-anon-key
+  SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+  SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
 
 jobs:
   build:
