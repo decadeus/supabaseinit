@@ -35,7 +35,7 @@ jobs:
       - uses: supabase/setup-cli@v1
         with:
           version: latest
-      - run: supabase link --project-ref rkqaofvzgdjvsfsikvyw
+      - run: supabase link --project-ref $NEXT_PUBLIC_SUPABASE_URL
       - run: supabase db push
       - name: Detect package manager
         id: detect-package-manager
