@@ -4,8 +4,8 @@ import { createClient } from "@supabase/supabase-js";
 import { useEffect, useState } from "react";
 
 const supabase = createClient(
-  NEXT_PUBLIC_SUPABASE_URL,
-NEXT_PUBLIC_SUPABASE_ANON_KEY
+  env.NEXT_PUBLIC_SUPABASE_URL,
+env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 );
 
 export default function Home() {
